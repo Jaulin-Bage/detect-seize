@@ -1,0 +1,7 @@
+[
+    {
+        "gpu_require": 1,
+        "task": "train_sft_text_only.py",
+        "log": "output_log/train_sft_text_only.txt"
+    }
+]
