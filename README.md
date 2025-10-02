@@ -6,3 +6,8 @@ just
 python auto.py
 ```
 after modifying the todo.json file.
+
+Dont forget to
+```
+pip install GPUtil==1.4.0
+```
