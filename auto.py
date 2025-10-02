@@ -19,10 +19,12 @@ def main():
    data=read_json_file('todo.json')
    for i in data:
       while True:
+         # detect the usage of GPUs
          gpu_info = get_gpu_info()
          if gpu_info != [] and len(gpu_info)<= i['gpu_require']:
             gpu_use=lambda gpu_info,i: ','.join(map(str, gpu_info[:i['gpu_require']]))
-            print(f"task start")
+            print("Task starts")
+            # write your own command here,and its available to design a personal json file if you need other args.
             os.system(f"deepspeed --include localhost:{gpu_use} --master_port 29505 {i['task']} > {i['log']}")
             continue
          else:
