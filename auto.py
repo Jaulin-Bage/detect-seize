@@ -21,7 +21,7 @@ def main():
       while True:
          # detect the usage of GPUs
          gpu_info = get_gpu_info()
-         if gpu_info != [] and len(gpu_info)<= i['gpu_require']:
+         if gpu_info != [] and len(gpu_info)>= i['gpu_require']:
             f= lambda gpu_info,i: ','.join(map(str, gpu_info[:i['gpu_require']]))
             gpu_use=f(gpu_info,i)
             print("Task starts")
