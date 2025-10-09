@@ -27,7 +27,7 @@ def main():
             print("Task starts")
             # write your own command here,and its available to design a personal json file if you need other args.
             os.system(f"deepspeed --include localhost:{gpu_use} --master_port 29505 {i['task']} > {i['log']}")
-            continue
+            break
          else:
             time.sleep(10)
 if __name__ == '__main__':
